@@ -10,3 +10,7 @@
 // 1601 --> 17
 // 2000 --> 20
 // Note: this kata uses strict construction as shown in the description and the examples, you can read more about it here
+
+function century(year) {
+    return Math.ceil(year / 100);
+  }
