@@ -24,4 +24,4 @@ function alphabetPosition(text) {
   return newArray.filter((num) => num !== undefined).join(" ");
 }
 
-console.log(alphabetPosition("Hello jelLo"));
+console.log(alphabetPosition("Hello jelLo$$"));
