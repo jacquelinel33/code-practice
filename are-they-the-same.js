@@ -28,9 +28,6 @@
 // Note for C
 // The two arrays have the same size (> 0) given as parameter in function comp.
 
-//two arrays as parameters with should be even lengths.
-//return true or false, if the arrays are the "same". Same meaning that 2nd array are the values of the items squared.
-//square root all the items in array1 and sort the items in num order. Sort array 2 in num order and check if they match.
 
 function comp(array1, array2) {
   if (array1 === null || array2 === null) {
