@@ -23,11 +23,35 @@
 // # => ["won't", "wont"]
 
 function topThreeWords(text) {
-  let textArray = text.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').split(' ')
-  let lowerCase = textArray.map(word => word.toLowerCase())
-  let wordCount = {}
-  lowerCase.forEach(word => wordCount[word] ? wordCount[word] += 1 : wordCount[word] = 1 )
-  return wordCount
+  let textArray = text.split(" ");
+  const regex = /(^[^\w]+)|([^\w]+$)/g;
+  let lowerCase = textArray.map((word) => {
+    word = word.toLowerCase().replace(regex, "");
+    return word;
+  });
+
+  let wordCount = {};
+  lowerCase.forEach((word) =>
+    wordCount[word] ? (wordCount[word] += 1) : (wordCount[word] = 1)
+  );
+
+  let toArray = [];
+
+  for (let key in wordCount) {
+    if (key !== "") toArray.push([key, wordCount[key]]);
+  }
+  let sortedArray = toArray.sort((a, b) => b[1] - a[1]);
+  return sortedArray.map(([key, value]) => key).slice(0, 3);
 }
 
-console.log(topThreeWords("In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income."))
+console.log(
+  topThreeWords(
+    "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income."
+  )
+);
+
+console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e"));
+
+console.log(topThreeWords("  , e   .. "));
+
+console.log(topThreeWords("  //wont won't won't "));

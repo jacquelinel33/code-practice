@@ -6,7 +6,7 @@
 
 function getCount(str) {
   let count = 0 
-  for (let letter of str.toLowerCase()) {
+  for (let letter in str.toLowerCase()) {
     if (letter === "a" || letter === "e" ||letter === "i" || letter === "o" || letter === "u") {
       console.log(letter)
       count++
