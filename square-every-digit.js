@@ -1,4 +1,4 @@
-//square every digit in an input and concatenate them as a string. 
+//square every digit in an input and concatenate them 
 
 function squareDigits(num){
  let combinedString = num.toString().split('').map(e => Math.pow(e,2)).join('')
