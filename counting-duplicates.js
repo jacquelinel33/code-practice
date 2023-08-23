@@ -15,16 +15,19 @@
 //return - the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string
 
 function duplicateCount(text) {
-    // let count = 0;
-    // let textArray = text.toLowerCase().split('');
-    // textArray.forEach(e => {
-    //   const filteredArray = textArray.filter(item => item !== e);
-    //   if (textArray.length !== filteredArray.length) {
-    //     count++;
-    //   }
-    //   textArray = filteredArray; // Update the array for the next iteration
-    // });
-    // return count;
+  let objCount = {};
+  let count = 0;
+  for (let value of text.toLowerCase()) {
+    objCount[value] ? (objCount[value] += 1) : (objCount[value] = 1);
   }
+  console.log(objCount);
+  for (let key in objCount) {
+    if (objCount[key] > 1) {
+      count++;
+    }
+  }
+  return count;
+}
 
-console.log(duplicateCount('Indivisibilities'))
+console.log(duplicateCount("Indivisibilities"));
+console.log(duplicateCount("aA11"));
