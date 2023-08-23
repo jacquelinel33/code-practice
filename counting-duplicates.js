@@ -20,7 +20,7 @@ function duplicateCount(text) {
   for (let value of text.toLowerCase()) {
     objCount[value] ? (objCount[value] += 1) : (objCount[value] = 1);
   }
-  console.log(objCount);
+
   for (let key in objCount) {
     if (objCount[key] > 1) {
       count++;
