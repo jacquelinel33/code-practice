@@ -9,7 +9,14 @@
 // 30 --> 8 // we have 8 divisors - 1, 2, 3, 5, 6, 10, 15 and 30
 // Note you should only return a number, the count of divisors. The numbers between parentheses are shown only for you to see which numbers are counted in each case.
 
-
-function getDivisorsCnt(n){
-
+function getDivisorsCnt(n) {
+  let divisorsCount = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      divisorsCount++;
+    }
+  }
+  return divisorsCount;
 }
+
+console.log(getDivisorsCnt(500000));
