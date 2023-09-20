@@ -11,6 +11,6 @@ function count(string) {
         }
     }
     return countObj
-  }
+  }``
 
   console.log(count('ABbbas'))
