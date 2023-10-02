@@ -4,20 +4,19 @@
 
 // The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 
-
 // return an array of indexes where the values equal the target
 
 function twoSum(numbers, target) {
-    let returnArray = []
-    for (let x=0; 0<numbers.length; x++) {
-        for (let i= x + 1; i<numbers.length; i++) {
-            if (numbers[x] + numbers[i] === target && x !== i) {
-                returnArray.push(x)
-                returnArray.push(i)
-                return returnArray
-            }
-        }
+  let returnArray = [];
+  for (let x = 0; 0 < numbers.length; x++) {
+    for (let i = x + 1; i < numbers.length; i++) {
+      if (numbers[x] + numbers[i] === target) {
+        returnArray.push(x);
+        returnArray.push(i);
+        return returnArray;
+      }
     }
+  }
 }
 
-console.log(twoSum([1,2,3],4))
+console.log(twoSum([1, 2, 3], 4));
